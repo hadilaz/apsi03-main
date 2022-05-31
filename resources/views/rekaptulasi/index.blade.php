@@ -6,7 +6,7 @@
   {!! session('sukses') !!}
 
 <!-- Page Heading -->
- <h1 class="h3 mb-4 text-gray-800">Rekaptulasi</h1>
+ <h1 class="h3 mb-4 text-gray-800">Form Upload Laporan</h1>
 
  <a href="/rekaptulasi/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah</a>
 
@@ -24,7 +24,7 @@
     <tbody>
         @foreach ($data as $row)
             <tr>
-            <td>{{$row->nama}}</td>
+                <td>{{ $row->User->name}}</td>
             <td align="center">
                 <a href="dokumen/{{$row->dokumen}}"><button class="btn btn-success" type="button">Download</button></a>
             </td>
@@ -47,5 +47,6 @@
         @endforeach
     </tbody>
 </table>
+{{$data->links()}}
 
 @endsection

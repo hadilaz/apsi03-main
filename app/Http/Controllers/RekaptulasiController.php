@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\rekaptulasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
 use Redirect;
 use Session;
 use Excel;
@@ -18,7 +19,7 @@ class RekaptulasiController extends Controller
      */
     public function index()
     {
-        $data = rekaptulasi::paginate(5);
+        $data = rekaptulasi::with('User')->latest()->simplepaginate(10);
     	return view('rekaptulasi/index',compact('data'));
     }
 
@@ -29,7 +30,9 @@ class RekaptulasiController extends Controller
      */
     public function create()
     {
-        return view('rekaptulasi/create');
+        return view('rekaptulasi/create', [
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -41,7 +44,7 @@ class RekaptulasiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required',
+            'user_id' => 'required',
             'dokumen' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
             'dokumen_g' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
             'dokumen_l' => 'mimes:doc,docx,pdf,xls,xlsx,pdf,ppt,pptx',
@@ -60,7 +63,7 @@ class RekaptulasiController extends Controller
         $dokumen_l->move(public_path().'/dokumen_g', $nama_dokumen_l);
 
         $data = new rekaptulasi();
-        $data->nama = $request->nama;
+        $data->user_id = $request->user_id;
         $data->dokumen = $nama_dokumen;
         $data->dokumen_g = $nama_dokumen_g;
         $data->dokumen_l = $nama_dokumen_l;

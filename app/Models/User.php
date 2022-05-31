@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Penilaian::class);
     }
+
+    public function rekaptulasi()
+    {
+        return $this->hasOne(rekaptulasi::class);
+    }
 }

@@ -3,16 +3,17 @@
 
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Rekaptulasi</h1>
+    <h1 class="h3 mb-4 text-gray-800">Form Upload Laporan</h1>
 
     <form action="/rekaptulasi" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="name">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama">
-            @error('nama')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
+            <label for="user_id">Nama</label>
+            <select class="form-control" aria-label="default select example" name="user_id">
+            @foreach ($users as $User)
+            <option value="{{$User->id}}">{{$User->name }}</option>
+            @endforeach 
+        </select>
         </div>
         <div class="form-group">
             <label for="dokumen">Dokumen*</label>

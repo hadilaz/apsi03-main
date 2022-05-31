@@ -15,7 +15,8 @@ class CreateRekapitulasisTable extends Migration
     {
         Schema::create('rekapitulasis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('dokumen')->nullable();
             $table->string('dokumen_g')->nullable();
             $table->string('dokumen_l')->nullable();

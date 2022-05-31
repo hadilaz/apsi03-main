@@ -9,5 +9,11 @@ class rekaptulasi extends Model
 {
     use HasFactory;
     protected $table ='rekapitulasis';
-    protected $fillable = ['nama','dokumen','dokumen_g','dokumen_g'];
+    protected $fillable = ['user_id','dokumen','dokumen_g','dokumen_g'];
+    
+    
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
