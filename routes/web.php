@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\RekaptulasiController;
@@ -48,7 +49,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'
     Route::put('{thread}', [MessagesController::class, 'update'])->name('.update');
     Route::delete('{thread}', [MessagesController::class, 'destroy'])->name('.destroy');
 });
-Route::resource('/messenger', MessagesController::class);
+Route::resource('/validasi', ValidasiController::class);
 Route::resource('/penilaian', PenilaianController::class);
 
 Route::get('/exportpdf', [jadwalController::class, 'exportpdf'])->name('exportpdf');

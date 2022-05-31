@@ -34,6 +34,7 @@
                 <a class="collapse-item @yield('penilaian')" href="/penilaian">Penilaian</a>
                 <a class="collapse-item @yield('rekaptulasi')" href="/rekaptulasi">Rekaptulasi</a>
                 <a class="collapse-item @yield('messages')" href="{{ route('messages') }}">pesan @include('messenger.unread-count')</a>
+                <a class="collapse-item @yield('validasi')" href="/validasi">Validasi</a>
             </div>
         </div>
     </li>
