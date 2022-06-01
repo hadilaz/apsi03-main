@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ValidasiController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\RekaptulasiController;
 use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\RevisiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +52,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'
     Route::delete('{thread}', [MessagesController::class, 'destroy'])->name('.destroy');
 });
 Route::resource('/validasi', ValidasiController::class);
+Route::resource('/rekap', RekapController::class);
 Route::resource('/penilaian', PenilaianController::class);
+Route::resource('/revisi', RevisiController::class);
 
 Route::get('/exportpdf', [jadwalController::class, 'exportpdf'])->name('exportpdf');

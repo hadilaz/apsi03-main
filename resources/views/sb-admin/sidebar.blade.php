@@ -32,9 +32,11 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item @yield('Jadwal')" href="/jadwal">Jadwal Seminar</a>
                 <a class="collapse-item @yield('penilaian')" href="/penilaian">Penilaian</a>
-                <a class="collapse-item @yield('rekaptulasi')" href="/rekaptulasi">Rekaptulasi</a>
+                <a class="collapse-item @yield('rekaptulasi')" href="/rekaptulasi">Form Upload Laporan</a>
                 <a class="collapse-item @yield('messages')" href="{{ route('messages') }}">pesan @include('messenger.unread-count')</a>
                 <a class="collapse-item @yield('validasi')" href="/validasi">Validasi</a>
+                <a class="collapse-item @yield('rekap')" href="/rekap">Rekaptulasi</a>
+                <a class="collapse-item @yield('revisi')" href="/revisi">Revisi</a>
             </div>
         </div>
     </li>

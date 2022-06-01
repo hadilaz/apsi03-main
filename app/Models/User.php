@@ -59,4 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Validasi::class);
     }
+    
+    public function revisi()
+    {
+        return $this->hasOne(revisi::class);
+    }
 }
