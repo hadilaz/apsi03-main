@@ -8,7 +8,9 @@
 <!-- Page Heading -->
  <h1 class="h3 mb-4 text-gray-800">Jadwal Seminar</h1>
 
+ @role('koordinator')
  <a href="/jadwal/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Jadwal Seminar</a>
+ @endrole
  <a href="/exportpdf" class="btn btn-info btn-sm"><i class="fas fa-plus"></i> create pdf</a>
 
   {{-- table --}}
@@ -18,9 +20,12 @@
         <th scope="col">No</th>
         <th scope="col">Nama</th>
         <th scope="col">Waktu</th>
-        <th scope="col">Penguji</th>
+        <th scope="col">Dosen Penguji</th>
         <th scope="col">Ruangan</th>
+        @role('koordinator|penguji|pebimbing')
         <th scope="col">Aksi</th>
+        @endrole
+       
         </tr>
     </thead>
     <tbody>
@@ -31,6 +36,7 @@
             <td>{{$row->waktu}}</td>
             <td>{{$row->penguji}}</td>
             <td>{{$row->ruangan}}</td>
+            @role('koordinator|penguji|pebimbing')
             <td width="20%">
                 <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="/jadwal/{{$row->id}}/edit" class="btn btn-primary btn-sm mr-1"><i class="fas fa-edit"></i> Edit</a>
@@ -41,6 +47,7 @@
                     </form>
                 </div>
             </td>
+            @endrole
             </tr>
         @endforeach
     </tbody>

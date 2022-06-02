@@ -30,18 +30,24 @@
         </a>
         <div id="main" class="collapse @yield('main')" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item @yield('Jadwal')" href="/jadwal">Jadwal Seminar</a>
-                <a class="collapse-item @yield('penilaian')" href="/penilaian">Penilaian</a>
-                <a class="collapse-item @yield('rekaptulasi')" href="/rekaptulasi">Form Upload Laporan</a>
-                <a class="collapse-item @yield('messages')" href="{{ route('messages') }}">pesan @include('messenger.unread-count')</a>
-                <a class="collapse-item @yield('validasi')" href="/validasi">Validasi</a>
+                @role('koordinator')
                 <a class="collapse-item @yield('rekap')" href="/rekap">Rekaptulasi</a>
+                @endrole
+                @role('penguji|pebimbing')
+                <a class="collapse-item @yield('penilaian')" href="/penilaian">Penilaian</a>
+                <a class="collapse-item @yield('validasi')" href="/validasi">Validasi</a>
+                @endrole
+                <a class="collapse-item @yield('Jadwal')" href="/jadwal">Jadwal Seminar</a>
+                @role('mahasiswa|penguji|pebimbing')
+                <a class="collapse-item @yield('messages')" href="{{ route('messages') }}">pesan @include('messenger.unread-count')</a>
+                <a class="collapse-item @yield('rekaptulasi')" href="/rekaptulasi">Form Upload Laporan</a>
                 <a class="collapse-item @yield('revisi')" href="/revisi">Revisi</a>
+                 @endrole
             </div>
         </div>
     </li>
 
-
+    @role('koordinator')
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item @yield('user-active')">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#user" aria-expanded="true"
@@ -56,6 +62,7 @@
             </div>
         </div>
     </li>
+    @endrole
 
     <!-- Divider -->
     <hr class="sidebar-divider">

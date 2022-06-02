@@ -37,12 +37,13 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['role:koordinator']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('/jadwal', jadwalController::class);
-    Route::resource('/rekaptulasi', RekaptulasiController::class);
+    Route::resource('/rekap', RekapController::class);
+    
 });
+
 Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'], function () {
     Route::get('/', [MessagesController::class, 'index']);
     Route::get('create', [MessagesController::class, 'create'])->name('.create');
@@ -51,9 +52,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'
     Route::put('{thread}', [MessagesController::class, 'update'])->name('.update');
     Route::delete('{thread}', [MessagesController::class, 'destroy'])->name('.destroy');
 });
-Route::resource('/validasi', ValidasiController::class);
-Route::resource('/rekap', RekapController::class);
-Route::resource('/penilaian', PenilaianController::class);
-Route::resource('/revisi', RevisiController::class);
+Route::group(['middleware' => ['role:penguji|pebimbing']], function () {
+    Route::resource('/penilaian', PenilaianController::class);
+    Route::resource('/validasi', ValidasiController::class);
+    
+    
+});
 
+Route::resource('/rekaptulasi', RekaptulasiController::class);
+Route::resource('/revisi', RevisiController::class);
+Route::resource('/jadwal', jadwalController::class);
 Route::get('/exportpdf', [jadwalController::class, 'exportpdf'])->name('exportpdf');

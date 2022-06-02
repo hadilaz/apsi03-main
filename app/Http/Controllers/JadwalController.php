@@ -15,7 +15,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        $jadwal = jadwal::select('id', 'name', 'waktu', 'penguji', 'ruangan')->latest()->simplepaginate(2);
+        $jadwal = jadwal::select('id', 'name', 'waktu', 'penguji', 'ruangan')->simplepaginate(10);
         return view('admin/jadwal/index', compact('jadwal'));
     }
 
