@@ -47,7 +47,7 @@
         </div>
     </li>
 
-    @role('koordinator')
+    @role('koordinator|Admin')
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item @yield('user-active')">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#user" aria-expanded="true"

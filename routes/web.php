@@ -37,7 +37,7 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['role:koordinator']], function () {
+Route::group(['middleware' => ['role:koordinator|Admin']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('/rekap', RekapController::class);
