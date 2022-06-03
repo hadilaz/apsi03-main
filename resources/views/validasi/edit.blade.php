@@ -19,7 +19,6 @@
         <div class="form-group">
             <label for="proposal">Proposal</label>
             <select class="form-control" id="proposal" name="proposal" value="{{$validasi->proposal}}">
-                <option selected>Pilih </option>
                 <option value="Selesai">Selesai</option>
                 <option value="Belum Selesai">Belum Selesai</option>
             </select>
@@ -27,7 +26,6 @@
         <div class="form-group">
             <label for="laporan">laporan</label>
             <select class="form-control" id="laporan" name="laporan" value="{{$validasi->laporan}}">
-                <option selected>Pilih </option>
                 <option value="Selesai">Selesai</option>
                 <option value="Belum Selesai">Belum Selesai</option>
             </select>
@@ -35,7 +33,6 @@
         <div class="form-group">
             <label for="seminar">presentasi</label>
             <select class="form-control" id="seminar" name="seminar" value="{{$validasi->seminar}}">
-                <option selected>Pilih </option>
                 <option value="Selesai">Selesai</option>
                 <option value="Belum Selesai">Belum Selesai</option>
             </select>

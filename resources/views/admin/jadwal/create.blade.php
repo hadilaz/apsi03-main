@@ -22,6 +22,13 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="date">Tanggal</label>
+            <input type="date" class="form-control" id="date" name="date">
+            @error('date')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="form-group">
             <label for="penguji">Penguji</label>
             <input type="text" class="form-control" id="penguji" name="penguji">
             @error('penguji')

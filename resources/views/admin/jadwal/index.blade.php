@@ -20,6 +20,7 @@
         <th scope="col">No</th>
         <th scope="col">Nama</th>
         <th scope="col">Waktu</th>
+        <th scope="col">tanggal</th>
         <th scope="col">Dosen Penguji</th>
         <th scope="col">Ruangan</th>
         @role('koordinator|penguji|pebimbing')
@@ -34,6 +35,7 @@
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$row->name}}</td>
             <td>{{$row->waktu}}</td>
+            <td>{{$row->date}}</td>
             <td>{{$row->penguji}}</td>
             <td>{{$row->ruangan}}</td>
             @role('koordinator|penguji|pebimbing')

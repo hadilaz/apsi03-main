@@ -19,7 +19,6 @@
         <div class="form-group">
             <label for="laporan">laporan</label>
             <select class="form-control" id="laporan" name="laporan" value="{{$penilaian->laporan}}">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -29,7 +28,6 @@
         <div class="form-group">
             <label for="aplikasi">aplikasi</label>
                 <select class="form-control" id="aplikasi" name="aplikasi" value="{{$penilaian->aplikasi}}">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -39,7 +37,6 @@
         <div class="form-group">
             <label for="presentasi">presentasi</label>
                 <select class="form-control" id="presentasi" name="presentasi" value="{{$penilaian->presentasi}}">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>

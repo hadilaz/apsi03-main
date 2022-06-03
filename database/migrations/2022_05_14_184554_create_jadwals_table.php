@@ -18,6 +18,7 @@ class CreateJadwalsTable extends Migration
 
             $table->string('name');
             $table->string('waktu');
+            $table->string('date');
             $table->string('penguji');
             $table->string('ruangan');
 

@@ -18,7 +18,6 @@
         <div class="form-group">
             <label for="laporan">laporan</label>
             <select class="form-control" id="laporan" name="laporan">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -28,7 +27,6 @@
         <div class="form-group">
             <label for="aplikasi">aplikasi</label>
             <select class="form-control" id="aplikasi" name="aplikasi">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -38,7 +36,6 @@
         <div class="form-group">
             <label for="presentasi">presentasi</label>
             <select class="form-control" id="presentasi" name="presentasi">
-                <option selected>Pilih Nilai</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>

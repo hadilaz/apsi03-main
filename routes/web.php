@@ -26,7 +26,7 @@ use App\Http\Controllers\DasboardController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('auth/loginsb');
 });
 
 

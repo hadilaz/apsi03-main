@@ -15,7 +15,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        $jadwal = jadwal::select('id', 'name', 'waktu', 'penguji', 'ruangan')->simplepaginate(10);
+        $jadwal = jadwal::select('id', 'name', 'waktu', 'date', 'penguji', 'ruangan')->simplepaginate(10);
         return view('admin/jadwal/index', compact('jadwal'));
     }
 
@@ -40,6 +40,7 @@ class JadwalController extends Controller
         $request->validate([
             'name' => 'required',
             'waktu' => 'required',
+            'date' => 'required',
             'penguji' => 'required',
             'ruangan' => 'required',
         ]);
@@ -47,6 +48,7 @@ class JadwalController extends Controller
         jadwal::create([
             'name' => $request->name,
             'waktu' => $request->waktu,
+            'date' => $request->date,
             'penguji' => $request->penguji,
             'ruangan' => $request->ruangan,
         ]);
@@ -79,7 +81,7 @@ class JadwalController extends Controller
      */
     public function edit($id)
     {
-        $jadwal = jadwal::select('id', 'name', 'waktu', 'penguji', 'ruangan')->whereId($id)->first();
+        $jadwal = jadwal::select('id', 'name', 'waktu', 'date', 'penguji', 'ruangan')->whereId($id)->first();
         return view('admin/jadwal/edit', compact('jadwal'));
     }
 
@@ -95,6 +97,7 @@ class JadwalController extends Controller
         $request->validate([
             'name' => 'required',
             'waktu' => 'required',
+            'date' => 'required',
             'penguji' => 'required',
             'ruangan' => 'required',
         ]);
@@ -102,6 +105,7 @@ class JadwalController extends Controller
         jadwal::whereId($id)->update([
             'name' => $request->name,
             'waktu' => $request->waktu,
+            'date' => $request->date,
             'penguji' => $request->penguji,
             'ruangan' => $request->ruangan,
 
