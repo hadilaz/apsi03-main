@@ -44,5 +44,6 @@
         @endforeach
     </tbody>
 </table>
+{{$revisi->links()}}
 
 @endsection

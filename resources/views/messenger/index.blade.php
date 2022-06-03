@@ -8,7 +8,7 @@
             <div class="overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @if ($message = Session::get('success'))
-                        <div class="w-full px-5 py-4 mb-5 bg-green-100 border-l-4 border-green-500">
+                        <div class="w-full px-5 py-4 mb-5 bg-success text-white">
                             {{ $message }}
                         </div>
                     @endif
@@ -19,13 +19,13 @@
                             <table class="min-w-full leading-normal">
                                 <thead class="border-b bg-gray-50">
                                     <th
-                                        class="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
+                                        class="px-3 py-3 text-xl font-normal text-left text-gray-500 uppercase align-middle">
                                         Sender</th>
                                     <th
-                                        class="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
+                                        class="px-3 py-3 text-xl font-normal text-left text-gray-500 uppercase align-middle">
                                         Subject</th>
                                     <th
-                                        class="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
+                                        class="px-3 py-3 text-xl font-normal text-left text-gray-500 uppercase align-middle">
                                     </th>
                                 </thead>
                                 <tbody>

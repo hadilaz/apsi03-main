@@ -12,6 +12,7 @@ use App\Http\Controllers\RekaptulasiController;
 use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\RevisiController;
+use App\Http\Controllers\DasboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,9 @@ use App\Http\Controllers\RevisiController;
 Route::get('/', function () {
     return view('auth/login');
 });
-Route::get('dasboard', function () {
-    return view('admin/dasboard');
-});
+
+
+Route::resource('/dasboard', DasboardController::class);
 
 
 

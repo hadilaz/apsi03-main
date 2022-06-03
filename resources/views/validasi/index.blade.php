@@ -46,5 +46,6 @@
             @endforeach
         </tbody>
     </table>
+    {{$validasi->links()}}
 
 @endsection

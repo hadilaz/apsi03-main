@@ -26,9 +26,9 @@
                             @method('PUT')
 
                             <!-- Message Form Input -->
-                            <div class="mt-4">
+                            <div class="form-group">
                                 <x-label for="message" :value="__('Reply message')" />
-                                <textarea name="message" rows="10"
+                                <textarea name="message" class="form-control" rows="10"
                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('message') }}</textarea>
                             </div>
 
