@@ -12,8 +12,9 @@
                             {{ $message }}
                         </div>
                     @endif
-
+                    @role('penguji|pebimbing')
                         <a href="/messages/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> New Pesan</a>
+                        @endrole
                         
                         <div class="col-span-9">
                             <table class="min-w-full leading-normal">

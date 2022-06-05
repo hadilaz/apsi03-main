@@ -30,7 +30,7 @@
                 @enderror
         </div>
         <div class="form-group">
-            <label for="dokumen_l">Dokumen logbook</label>
+            <label for="dokumen_l">Dokumen Laporan</label>
                 <input type="file" class="form-control" name="dokumen_l" value="{{ old('dokumen_l') }}">
                 @error('dokumen_l')
                 <small class="text-danger">{{ $message }}</small>
